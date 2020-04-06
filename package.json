@@ -1,0 +1,27 @@
+{
+  "name": "@19h47/prettier-config",
+  "version": "0.0.0",
+  "description": "19h47's base prettier configuration",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/19h47/prettier-config"
+  },
+  "keywords": [
+    "prettier",
+    "config",
+    "upstatement"
+  ],
+  "author": {
+    "name": "Jérémy Levron",
+    "email": "jeremylevron@19h47.fr",
+    "twitter": "@10h47"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/19h47/prettier-config/issues"
+  },
+  "dependencies": {
+    "prettier": "^1.x.x"
+  }
+}
