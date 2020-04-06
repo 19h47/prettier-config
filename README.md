@@ -1,105 +1,31 @@
 # prettier-config
 
-[![npm version](https://badge.fury.io/js/%40upstatement%2Fprettier-config.svg)](https://badge.fury.io/js/%40upstatement%2Fprettier-config)
-
-Upstatement's [`prettier`](https://prettier.io) configuration.
-
-Pairs well with our [`ESLint configuration`](https://www.npmjs.com/package/@upstatement/eslint-config).
+19h47's [`prettier`](https://prettier.io) configuration.
 
 ## Installation
 
-### npm
+### yarn
 
 ```sh
-npm install --save-dev @upstatement/prettier-config
+yarn install 19h47/prettier-config
 ```
 
 If you don't have it installed already, also install `prettier` as a devDependency.
 
 ```sh
-npm install --save-dev prettier
-```
-
-### yarn
-
-```sh
-yarn add --dev @upstatement/prettier-config prettier
+yarn install --dev prettier
 ```
 
 ## Usage
 
-We export two ESLint configurations for your usage:
-
-1. [Default (2 space)](#default-config)
-2. [Four Spaces](#four-spaces-config)
+We export Prettier configurations for your usage.
 
 ### Default Config
 
 Create a `prettier.config.js` file at the root of your project that contains:
 
 ```js
-module.exports = require('@upstatement/prettier-config');
-```
-
-### Four Spaces Config
-
-If you prefer 4 spaces instead of 2, use this in your `prettier.config.js` instead:
-
-```js
-module.exports = require('@upstatement/prettier-config/four-spaces');
-```
-
-### Four tabs Config
-
-If you prefer 4 tabs instead of spaces, use this in your `prettier.config.js` instead:
-
-```js
-module.exports = require('@upstatement/prettier-config/tabs-spaces');
-```
-
-## Pre-commit Hook
-
-As another line of defense, if you want Prettier to automatically fix your errors on commit, you can use [`lint-staged`](https://github.com/okonet/lint-staged) with [`husky`](https://github.com/typicode/husky), which manages git hooks.
-
-1. `npm install --save-dev prettier lint-staged husky`
-2. Update your `package.json` like this:
-
-```json
-{
-  "lint-staged": {
-    "*.{js,css,json,md}": [
-      "prettier --write",
-      "git add"
-    ],
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  }
-}
-```
-
-If you already have `lint-staged` running [ESLint](https://github.com/Upstatement/eslint-config#pre-commit-hook), just add the prettier step on top of it:
-
-```json
-{
-  "lint-staged": {
-    "*.{js,css,json,md}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  }
-}
+module.exports = require('@19h47/prettier-config');
 ```
 
 ## [Editor Integration](https://prettier.io/docs/en/editors.html)
@@ -109,24 +35,6 @@ If you already have `lint-staged` running [ESLint](https://github.com/Upstatemen
 1. Install Prettier extension: `View → Extensions` then find and install Prettier - Code formatter
 2. Reload the editor
 3. In your user settings `Code -> Preferences -> Settings` add `editor.formatOnSave: true`
-
-### Sublime Text 3
-
-[https://packagecontrol.io/packages/JsPrettier](https://packagecontrol.io/packages/JsPrettier)
-
-### Atom
-
-[https://atom.io/packages/prettier-atom](https://atom.io/packages/prettier-atom)
-
-## How to publish to npm
-
-Read npm's docs on [How to Update a Package](https://docs.npmjs.com/getting-started/publishing-npm-packages#how-to-update-a-package).
-
-1. `npm login`
-   - Make sure you're logged into Upstatement's npm account with the credentials from 1pass. `npm whoami` will tell you if you're already logged in.
-2. `npm version <update_type>`
-   - `update_type` can be `patch`, `minor`, or `major`. If you don't know which one to use, go read about [semantic versioning](https://docs.npmjs.com/getting-started/semantic-versioning).
-3. `npm publish`
 
 ## Enforced Rules
 
